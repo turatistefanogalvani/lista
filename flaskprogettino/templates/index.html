@@ -11,11 +11,22 @@
         <ul>
             {% for elemento in x%}
                 <li>{{elemento}}</li>
+                <form action="/rimuovi/{{loop.index0}}" method="post" style="display: inline;">
+                <button type="submit">Rimuovi</button>
+                </form>
             {%endfor%}
         </ul>
     {% else %}
         <p>La lista è vuota</p>
     {% endif %}
+    <form action="/aggiungi" method="post">
+    <input type="text" name="elemento" placeholder="Aggiungi un elemento"required>
+    <button type="submit">Aggiungi</button>
+    </form>
+
+    <form action="/pulisci" method="post" style="display: inline;">
+        <button type="submit">pulisci</button>
+        </form>
     
 </body>
 </html>
